@@ -1,4 +1,4 @@
-# escape_horror
+# Escape Horror
 
 A month ago, every member of the Arcanum Project vanished without a trace.
 
