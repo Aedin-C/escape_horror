@@ -13,7 +13,4 @@ Your mission: uncover what happened inside the Grisham Estate — and recover wh
 
 
 ## Download links:
-### Windows:
-https://www.mediafire.com/file/w460bmdq7r7zc8z/EscapeHorror.exe/file
-### Macbook:
-https://www.mediafire.com/file/ljg8bec2u9q2xao/EscapeHorror.zip/file
+https://charzq.itch.io/
