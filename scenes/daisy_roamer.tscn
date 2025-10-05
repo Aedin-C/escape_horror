@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://bhvav5pjko7v5"]
+
+[ext_resource type="Script" uid="uid://bdeumvv0lhm1r" path="res://scripts/roamer.gd" id="1_dlcwg"]
+[ext_resource type="Texture2D" uid="uid://c0ojshv6uo465" path="res://assets/daisy_monster.png" id="2_cn5pg"]
+[ext_resource type="PackedScene" uid="uid://wihvw7x31u4y" path="res://scenes/killzone.tscn" id="3_whtqr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_raua7"]
+atlas = ExtResource("2_cn5pg")
+region = Rect2(0, 22, 16, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8167p"]
+atlas = ExtResource("2_cn5pg")
+region = Rect2(16, 22, 16, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_osmjv"]
+atlas = ExtResource("2_cn5pg")
+region = Rect2(32, 22, 16, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qyipc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_raua7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8167p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_osmjv")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rl126"]
+size = Vector2(10, 20)
+
+[node name="DaisyRoamer" type="Node2D"]
+z_index = 10
+script = ExtResource("1_dlcwg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -13)
+sprite_frames = SubResource("SpriteFrames_qyipc")
+animation = &"walk"
+autoplay = "walk"
+
+[node name="Killzone" parent="." instance=ExtResource("3_whtqr")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+visible = false
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_rl126")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 2.0
+target_desired_distance = 2.0
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(0, -14)
+target_position = Vector2(25, 0)

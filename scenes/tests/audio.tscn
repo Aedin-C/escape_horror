@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddgh1jwy8ctd1"]
+
+[ext_resource type="AudioStream" uid="uid://clihsj628fqql" path="res://assets/Sounds/heartbeat-02-225103.mp3" id="1_uwad8"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(625, -2)
+stream = ExtResource("1_uwad8")
+volume_db = 10.0
+autoplay = true
+max_distance = 1715.0
+parameters/looping = true

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://wuh3f3yxqquv"]
+
+[ext_resource type="Script" uid="uid://br4g3mvhl8su4" path="res://scripts/inventory_item.gd" id="1_5mnqf"]
+[ext_resource type="Texture2D" uid="uid://b3o15xquraeu5" path="res://assets/paper.png" id="2_5yd18"]
+
+[resource]
+script = ExtResource("1_5mnqf")
+id = "wife_entry_one"
+name = "Wife Entry 1 - March 15, 2025"
+description = "We’ve just moved into the estate. It’s vast and quiet - too quiet. \\n I can’t shake the feeling that the house feels heavy. "
+texture = ExtResource("2_5yd18")
+metadata/_custom_type_script = "uid://br4g3mvhl8su4"

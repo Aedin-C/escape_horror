@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InvSlot" load_steps=3 format=3 uid="uid://cu2nh6amp8rr0"]
+
+[ext_resource type="Resource" uid="uid://cu03iolpxir2v" path="res://assets/inventory/items/crate_uncertainty.tres" id="1_dehma"]
+[ext_resource type="Script" uid="uid://dps71dla8x225" path="res://assets/inventory/inv_slot.gd" id="2_2cgwb"]
+
+[resource]
+script = ExtResource("2_2cgwb")
+item = ExtResource("1_dehma")
+metadata/_custom_type_script = "uid://dps71dla8x225"

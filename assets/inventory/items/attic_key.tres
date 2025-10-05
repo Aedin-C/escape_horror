@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://dwcqh4she5rjg"]
+
+[ext_resource type="Script" uid="uid://br4g3mvhl8su4" path="res://scripts/inventory_item.gd" id="1_k2thq"]
+[ext_resource type="Texture2D" uid="uid://bftak8wjm5fvu" path="res://assets/attic_key.png" id="2_2sruo"]
+
+[resource]
+script = ExtResource("1_k2thq")
+id = "attic_key"
+name = "Attic Key"
+description = "A rusted key. Looks like it can open a metallic door."
+texture = ExtResource("2_2sruo")
+metadata/_custom_type_script = "uid://br4g3mvhl8su4"

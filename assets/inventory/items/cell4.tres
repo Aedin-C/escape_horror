@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://da7qb87pkw5a8"]
+
+[ext_resource type="Script" uid="uid://br4g3mvhl8su4" path="res://scripts/inventory_item.gd" id="1_6bs6s"]
+[ext_resource type="Texture2D" uid="uid://b3o15xquraeu5" path="res://assets/paper.png" id="2_x8axt"]
+
+[resource]
+script = ExtResource("1_6bs6s")
+id = "cell4"
+name = "Cell 4"
+description = "Don’t let him bring the stick in here. It stings — not the wound, \\nbut something in my skull. Makes me want to crawl out of my own skin. \\nI can taste the orange light when it’s close. The others are restless. \\nSomething in the pipes keeps ticking. We’re not staying locked away."
+texture = ExtResource("2_x8axt")
+metadata/_custom_type_script = "uid://br4g3mvhl8su4"

@@ -1,0 +1,86 @@
+[gd_scene load_steps=6 format=3 uid="uid://dlk7r7lan7eex"]
+
+[ext_resource type="Script" uid="uid://d33dblksel10e" path="res://scripts/die.gd" id="1_5x8g4"]
+[ext_resource type="PackedScene" uid="uid://7dg6curwqk7s" path="res://scenes/player.tscn" id="2_hvcds"]
+[ext_resource type="AudioStream" uid="uid://b0um7opltmws6" path="res://assets/Sounds/ominous-horror-soundtrack-312558.mp3" id="4_ya8ws"]
+
+[sub_resource type="Gradient" id="Gradient_f2swp"]
+offsets = PackedFloat32Array(0.863636, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_f1d2v"]
+gradient = SubResource("Gradient_f2swp")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="Die" type="Control"]
+process_mode = 3
+z_index = 31
+custom_minimum_size = Vector2(230, 132)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -922.0
+offset_bottom = -516.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5x8g4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.0
+offset_top = -33.0
+offset_right = 39.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Respawn" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Respawn"
+
+[node name="Menu" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Menu"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(115.5, 66.5)
+scale = Vector2(3.57813, 2.04688)
+texture = SubResource("GradientTexture2D_f1d2v")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(115, 66)
+zoom = Vector2(5, 5)
+
+[node name="Player" parent="." instance=ExtResource("2_hvcds")]
+visible = false
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ya8ws")
+volume_db = -10.0
+autoplay = true
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Respawn" to="." method="_on_respawn_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Menu" to="." method="_on_menu_pressed"]

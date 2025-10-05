@@ -1,0 +1,73 @@
+[gd_scene load_steps=9 format=3 uid="uid://bw4qdnf38dwq7"]
+
+[ext_resource type="Texture2D" uid="uid://bvmo2ty6bjy7x" path="res://assets/blinky_monster.png" id="1_62s2i"]
+[ext_resource type="Script" uid="uid://bi4o1emxn8bwm" path="res://scripts/blinky.gd" id="1_ypemj"]
+[ext_resource type="AudioStream" uid="uid://b271vu3h71iod" path="res://assets/Sounds/sirenhead-death-sound-60495-[AudioTrimmer.com].mp3" id="3_ypemj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cq68y"]
+atlas = ExtResource("1_62s2i")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ukpvm"]
+atlas = ExtResource("1_62s2i")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3j2d7"]
+atlas = ExtResource("1_62s2i")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uq8ks"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cq68y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ukpvm")
+}, {
+"duration": 10.0,
+"texture": SubResource("AtlasTexture_3j2d7")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_ukpvm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3j2d7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jiudx"]
+size = Vector2(42, 40)
+
+[node name="Blinky" type="Node2D"]
+script = ExtResource("1_ypemj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_uq8ks")
+autoplay = "default"
+frame_progress = 0.748621
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_jiudx")
+
+[node name="Scream" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ypemj")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 7.0
+one_shot = true
+
+[node name="ScreamTimer" type="Timer" parent="."]
+wait_time = 25.0
+one_shot = true
+
+[connection signal="body_entered" from="Area2D" to="." method="on_blinky_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="ScreamTimer" to="." method="_on_scream_timer_timeout"]

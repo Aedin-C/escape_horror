@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://blqrh6ol7j6gb"]
+
+[ext_resource type="Texture2D" uid="uid://pbsaa13gxxek" path="res://assets/monster3.png" id="1_uwnm8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1cbnp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_uwnm8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Monster" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_1cbnp")
+
+[node name="RayCast2DRight" type="RayCast2D" parent="."]
+
+[node name="RayCast2D2Left" type="RayCast2D" parent="."]

@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=3 uid="uid://b8b0u7odm3wpt"]
+
+[ext_resource type="Texture2D" uid="uid://cy0p1qu3q6a3o" path="res://assets/basement_tileset.png" id="1_a7dhc"]
+[ext_resource type="PackedScene" uid="uid://wihvw7x31u4y" path="res://scenes/killzone.tscn" id="2_jjj73"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_412cd"]
+atlas = ExtResource("1_a7dhc")
+region = Rect2(160, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8rul"]
+atlas = ExtResource("1_a7dhc")
+region = Rect2(160, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_788yo"]
+atlas = ExtResource("1_a7dhc")
+region = Rect2(160, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dakmh"]
+atlas = ExtResource("1_a7dhc")
+region = Rect2(160, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xjiwp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_412cd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q8rul")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_788yo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dakmh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iuany"]
+size = Vector2(6, 16)
+
+[sub_resource type="Gradient" id="Gradient_id182"]
+colors = PackedColorArray(0.690196, 0.388235, 0.121569, 0.717647, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_y4m2n"]
+gradient = SubResource("Gradient_id182")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="Laser" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_xjiwp")
+autoplay = "default"
+frame_progress = 0.910993
+
+[node name="Killzone" parent="." instance=ExtResource("2_jjj73")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_iuany")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, -0.5)
+scale = Vector2(1, 0.984375)
+shadow_enabled = true
+shadow_filter = 2
+texture = SubResource("GradientTexture2D_y4m2n")

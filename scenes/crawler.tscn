@@ -1,0 +1,128 @@
+[gd_scene load_steps=15 format=3 uid="uid://dg23bngq6p0qm"]
+
+[ext_resource type="Script" uid="uid://da7omwsqno5ym" path="res://scripts/crawler.gd" id="1_b5lq3"]
+[ext_resource type="Texture2D" uid="uid://dfmiikv2okdk3" path="res://assets/crawling_monster.png" id="2_8cekd"]
+[ext_resource type="PackedScene" uid="uid://wihvw7x31u4y" path="res://scenes/killzone.tscn" id="3_80sji"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kaw6r"]
+atlas = ExtResource("2_8cekd")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0m443"]
+atlas = ExtResource("2_8cekd")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pg85k"]
+atlas = ExtResource("2_8cekd")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wutyo"]
+atlas = ExtResource("2_8cekd")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jvisr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kaw6r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0m443")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pg85k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wutyo")
+}],
+"loop": true,
+"name": &"horizontal_crawl",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xdvhm"]
+radius = 6.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ciepn"]
+atlas = ExtResource("2_8cekd")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1efes"]
+atlas = ExtResource("2_8cekd")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6mwl"]
+atlas = ExtResource("2_8cekd")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_thibw"]
+atlas = ExtResource("2_8cekd")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2pdvt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ciepn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1efes")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6mwl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_thibw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Crawler" type="Node2D"]
+script = ExtResource("1_b5lq3")
+
+[node name="Horizontal" type="Node2D" parent="."]
+
+[node name="HSprite" type="AnimatedSprite2D" parent="Horizontal"]
+position = Vector2(0, -12)
+sprite_frames = SubResource("SpriteFrames_jvisr")
+animation = &"horizontal_crawl"
+autoplay = "horizontal_crawl"
+frame = 1
+frame_progress = 0.11744
+
+[node name="Killzone" parent="Horizontal" instance=ExtResource("3_80sji")]
+
+[node name="CollisionH" type="CollisionShape2D" parent="Horizontal/Killzone"]
+visible = false
+position = Vector2(0, -4)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_xdvhm")
+
+[node name="RayCastH" type="RayCast2D" parent="Horizontal"]
+position = Vector2(0, -4)
+target_position = Vector2(-17, 0)
+collision_mask = 4
+
+[node name="Vertical" type="Node2D" parent="."]
+visible = false
+position = Vector2(0, -8)
+
+[node name="VSprite" type="AnimatedSprite2D" parent="Vertical"]
+scale = Vector2(0.96875, 1)
+sprite_frames = SubResource("SpriteFrames_2pdvt")
+autoplay = "default"
+frame_progress = 0.152259
+
+[node name="Killzone" parent="Vertical" instance=ExtResource("3_80sji")]
+
+[node name="CollisionV" type="CollisionShape2D" parent="Vertical/Killzone"]
+visible = false
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_xdvhm")
+
+[node name="RayCastV" type="RayCast2D" parent="Vertical"]
+position = Vector2(0, 2)
+target_position = Vector2(0, -16)
+collision_mask = 4

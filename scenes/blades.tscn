@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://gpbwgufm5ix5"]
+
+[ext_resource type="PackedScene" uid="uid://wihvw7x31u4y" path="res://scenes/killzone.tscn" id="2_36unt"]
+[ext_resource type="Texture2D" uid="uid://cy0p1qu3q6a3o" path="res://assets/basement_tileset.png" id="2_q205w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gq2cq"]
+atlas = ExtResource("2_q205w")
+region = Rect2(128, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36unt"]
+atlas = ExtResource("2_q205w")
+region = Rect2(128, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q205w"]
+atlas = ExtResource("2_q205w")
+region = Rect2(128, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d32ri"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gq2cq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36unt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q205w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_36unt"]
+size = Vector2(12, 6)
+
+[node name="Blades" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_d32ri")
+autoplay = "default"
+
+[node name="Killzone" parent="." instance=ExtResource("2_36unt")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+visible = false
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_36unt")

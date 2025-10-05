@@ -1,0 +1,112 @@
+[gd_scene load_steps=3 format=3 uid="uid://ejmnke32jlpt"]
+
+[ext_resource type="Script" uid="uid://bd6nr4w4twol1" path="res://scripts/keypad.gd" id="1_vxa2g"]
+[ext_resource type="Texture2D" uid="uid://brs13visvadh0" path="res://assets/inventory/inventory.png" id="2_1dgaj"]
+
+[node name="Keypad" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vxa2g")
+
+[node name="Panel" type="NinePatchRect" parent="."]
+layout_mode = 1
+offset_right = 165.0
+offset_bottom = 157.0
+texture = ExtResource("2_1dgaj")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 164.0
+offset_bottom = 156.0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 1
+theme_override_constants/v_separation = 1
+columns = 3
+
+[node name="1" type="Button" parent="Panel/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "1"
+
+[node name="2" type="Button" parent="Panel/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "2"
+
+[node name="3" type="Button" parent="Panel/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "3"
+
+[node name="4" type="Button" parent="Panel/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "4"
+
+[node name="5" type="Button" parent="Panel/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "5"
+
+[node name="6" type="Button" parent="Panel/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "6"
+
+[node name="7" type="Button" parent="Panel/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "7"
+
+[node name="8" type="Button" parent="Panel/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "8"
+
+[node name="9" type="Button" parent="Panel/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "9"
+
+[node name="Clear" type="Button" parent="Panel/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "c"
+
+[node name="0" type="Button" parent="Panel/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+
+[node name="Enter" type="Button" parent="Panel/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "✓"
+
+[node name="Close" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -11.0
+offset_right = 19.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.592157, 0.0823529, 0.109804, 1)
+text = "x"
+flat = true
+
+[connection signal="pressed" from="Panel/Close" to="." method="_on_clear_pressed"]

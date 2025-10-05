@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InvSlot" load_steps=3 format=3 uid="uid://b61sug7vd75gg"]
+
+[ext_resource type="Resource" uid="uid://da7qb87pkw5a8" path="res://assets/inventory/items/cell4.tres" id="1_xholx"]
+[ext_resource type="Script" uid="uid://dps71dla8x225" path="res://assets/inventory/inv_slot.gd" id="2_oqux6"]
+
+[resource]
+script = ExtResource("2_oqux6")
+item = ExtResource("1_xholx")
+metadata/_custom_type_script = "uid://dps71dla8x225"

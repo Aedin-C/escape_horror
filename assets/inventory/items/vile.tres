@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://car8xwckckqpu"]
+
+[ext_resource type="Script" uid="uid://br4g3mvhl8su4" path="res://scripts/inventory_item.gd" id="1_arpwj"]
+[ext_resource type="Texture2D" uid="uid://dx5q0mldfubj6" path="res://assets/vile.png" id="2_332wf"]
+
+[resource]
+script = ExtResource("1_arpwj")
+id = "vile"
+name = "Orange Liquid Vile"
+description = "An odd vile containing some kind of orange liquid. \\nYou feel as though something is watching you heavily."
+texture = ExtResource("2_332wf")
+metadata/_custom_type_script = "uid://br4g3mvhl8su4"

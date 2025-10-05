@@ -1,0 +1,4 @@
+CrateInv
+InvSlot
+InvItem
+Inv

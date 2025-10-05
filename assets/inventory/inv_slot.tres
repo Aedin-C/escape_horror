@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InvSlot" load_steps=3 format=3 uid="uid://dkf6x5p12m7y2"]
+
+[ext_resource type="Resource" uid="uid://c1vp7vx8jbg72" path="res://assets/inventory/items/basement_key.tres" id="1_kh08w"]
+[ext_resource type="Script" uid="uid://dps71dla8x225" path="res://assets/inventory/inv_slot.gd" id="2_5dlsg"]
+
+[resource]
+script = ExtResource("2_5dlsg")
+item = ExtResource("1_kh08w")
+metadata/_custom_type_script = "uid://dps71dla8x225"

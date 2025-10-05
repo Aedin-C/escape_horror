@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfv3gii8u226p"]
+
+[ext_resource type="Texture2D" uid="uid://hno1422bj4i0" path="res://assets/horror_tileset.png" id="1_v7pfb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ni6t5"]
+size = Vector2(16, 2)
+
+[node name="oak_door" type="StaticBody2D"]
+
+[node name="Top" type="Sprite2D" parent="."]
+texture = ExtResource("1_v7pfb")
+region_enabled = true
+region_rect = Rect2(48, 48, 16, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_ni6t5")

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://c57oswjgm38vb"]
+
+[ext_resource type="Script" uid="uid://br4g3mvhl8su4" path="res://scripts/inventory_item.gd" id="1_6fihn"]
+[ext_resource type="Texture2D" uid="uid://b3o15xquraeu5" path="res://assets/paper.png" id="2_bflx5"]
+
+[resource]
+script = ExtResource("1_6fihn")
+id = "cell5"
+name = "Cell 5"
+description = "They’re locking me up because they’re afraid. Not of me, not yet, \\nbut of what I will be. But that stick, glowing orange, it stops me. \\nI hate it. I hate him. When he pointed it at me, I couldn’t think, \\nI couldn’t move without my body screaming."
+texture = ExtResource("2_bflx5")
+metadata/_custom_type_script = "uid://br4g3mvhl8su4"

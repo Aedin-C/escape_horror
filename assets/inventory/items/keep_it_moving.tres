@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://wttpg3pnx0ax"]
+
+[ext_resource type="Script" uid="uid://br4g3mvhl8su4" path="res://scripts/inventory_item.gd" id="1_27g6r"]
+[ext_resource type="Texture2D" uid="uid://b3o15xquraeu5" path="res://assets/paper.png" id="2_5peaq"]
+
+[resource]
+script = ExtResource("1_27g6r")
+id = "keep_it_moving"
+name = "Keep it moving"
+description = "Top left, top middle, middle left, bottom right"
+texture = ExtResource("2_5peaq")
+metadata/_custom_type_script = "uid://br4g3mvhl8su4"

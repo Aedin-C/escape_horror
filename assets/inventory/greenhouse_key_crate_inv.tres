@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CrateInv" load_steps=4 format=3 uid="uid://dqbiihgjo2q1q"]
+
+[ext_resource type="Script" uid="uid://35w4kgelq25g" path="res://scenes/crate_inv.gd" id="1_xubbp"]
+[ext_resource type="Script" uid="uid://dps71dla8x225" path="res://assets/inventory/inv_slot.gd" id="2_8pu7b"]
+[ext_resource type="Resource" uid="uid://ce2lahnk8tv01" path="res://assets/inventory/greenhouse_key_slot.tres" id="3_41e0w"]
+
+[resource]
+script = ExtResource("1_xubbp")
+slots = Array[ExtResource("2_8pu7b")]([ExtResource("3_41e0w")])
+metadata/_custom_type_script = "uid://35w4kgelq25g"

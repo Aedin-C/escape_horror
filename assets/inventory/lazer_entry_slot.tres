@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InvSlot" load_steps=3 format=3 uid="uid://bp0altowxc380"]
+
+[ext_resource type="Resource" uid="uid://h2gi12gwcowj" path="res://assets/inventory/items/lazer_entry.tres" id="1_q3a01"]
+[ext_resource type="Script" uid="uid://dps71dla8x225" path="res://assets/inventory/inv_slot.gd" id="2_hwr5l"]
+
+[resource]
+script = ExtResource("2_hwr5l")
+item = ExtResource("1_q3a01")
+metadata/_custom_type_script = "uid://dps71dla8x225"

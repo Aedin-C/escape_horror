@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://jt2dj0oi5vgk"]
+
+[ext_resource type="Script" uid="uid://ccu7700hd7bjw" path="res://scripts/projectile.gd" id="1_q3m7n"]
+[ext_resource type="Texture2D" uid="uid://beetb0x4qqsay" path="res://assets/projectile.png" id="2_softn"]
+[ext_resource type="PackedScene" uid="uid://wihvw7x31u4y" path="res://scenes/killzone.tscn" id="3_softn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c8fcr"]
+size = Vector2(5, 3)
+
+[node name="Area2D" type="Area2D"]
+z_index = 9
+script = ExtResource("1_q3m7n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_softn")
+region_rect = Rect2(38, 6, 3, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_c8fcr")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="Killzone" parent="." instance=ExtResource("3_softn")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_c8fcr")
+
+[connection signal="timeout" from="Timer" to="." method="_on_projectile_timer_timeout"]

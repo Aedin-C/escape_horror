@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://c68atnot07fq4"]
+
+[ext_resource type="Script" uid="uid://br4g3mvhl8su4" path="res://scripts/inventory_item.gd" id="1_oa8oo"]
+[ext_resource type="Texture2D" uid="uid://1wfeda7njdip" path="res://assets/stick.png" id="2_panmt"]
+
+[resource]
+script = ExtResource("1_oa8oo")
+id = "stick"
+name = "Orange Stick"
+description = "A weapon of sorts. It seems devoid of power and broken."
+texture = ExtResource("2_panmt")
+metadata/_custom_type_script = "uid://br4g3mvhl8su4"

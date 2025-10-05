@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://b7k3g2y5fa1ka"]
+
+[ext_resource type="Script" uid="uid://br4g3mvhl8su4" path="res://scripts/inventory_item.gd" id="1_8fv1c"]
+[ext_resource type="Texture2D" uid="uid://ckflyq20fvane" path="res://assets/cross_pipe.png" id="2_t8j3f"]
+
+[resource]
+script = ExtResource("1_8fv1c")
+id = "cross_pipe"
+name = "Cross Pipe"
+description = "A metallic pipe. It seems like it can connect to \\n other pipes to complete a flow of power."
+texture = ExtResource("2_t8j3f")
+metadata/_custom_type_script = "uid://br4g3mvhl8su4"

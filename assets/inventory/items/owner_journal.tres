@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://be52nyn7sbhb6"]
+
+[ext_resource type="Script" uid="uid://br4g3mvhl8su4" path="res://scripts/inventory_item.gd" id="1_lul5o"]
+[ext_resource type="Texture2D" uid="uid://86gif0a1leov" path="res://assets/owner_diary.png" id="2_ncwso"]
+
+[resource]
+script = ExtResource("1_lul5o")
+id = "owner_book"
+name = "Owner's Journal"
+description = "A well kept book. \\n You need a desk to fully examine its contents."
+texture = ExtResource("2_ncwso")
+metadata/_custom_type_script = "uid://br4g3mvhl8su4"

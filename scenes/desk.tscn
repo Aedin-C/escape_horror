@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bskehw3oclh2l"]
+
+[ext_resource type="Script" uid="uid://6tstd2nwxhrn" path="res://scripts/desk.gd" id="1_0iqh6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_88002"]
+
+[node name="Desk" type="Area2D"]
+script = ExtResource("1_0iqh6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_88002")
+
+[connection signal="body_entered" from="." to="." method="_on_desk_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_desk_body_exited"]

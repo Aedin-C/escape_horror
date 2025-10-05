@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://cu03iolpxir2v"]
+
+[ext_resource type="Script" uid="uid://br4g3mvhl8su4" path="res://scripts/inventory_item.gd" id="1_23126"]
+[ext_resource type="Texture2D" uid="uid://b3o15xquraeu5" path="res://assets/paper.png" id="2_i1vmr"]
+
+[resource]
+script = ExtResource("1_23126")
+id = "crate_uncertainty"
+name = "Uncertainty 2"
+description = "The crates aren’t labeled. Rourke swears they were sealed, \\nbut something seeped out of one. The clicking within the walls became louder."
+texture = ExtResource("2_i1vmr")
+metadata/_custom_type_script = "uid://br4g3mvhl8su4"

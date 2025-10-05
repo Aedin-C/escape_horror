@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://crheu5ov47sxo"]
+
+[ext_resource type="Script" uid="uid://br4g3mvhl8su4" path="res://scripts/inventory_item.gd" id="1_hifus"]
+[ext_resource type="Texture2D" uid="uid://86gif0a1leov" path="res://assets/owner_diary.png" id="2_11ybv"]
+
+[resource]
+script = ExtResource("1_hifus")
+id = "tutorial_book"
+name = "Tutorial Book"
+description = "Walk up to the desk and right click to investigate."
+texture = ExtResource("2_11ybv")
+metadata/_custom_type_script = "uid://br4g3mvhl8su4"

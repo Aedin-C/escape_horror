@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CrateInv" load_steps=4 format=3 uid="uid://bvca0hlj15ce6"]
+
+[ext_resource type="Script" uid="uid://35w4kgelq25g" path="res://scenes/crate_inv.gd" id="1_u5w86"]
+[ext_resource type="Script" uid="uid://dps71dla8x225" path="res://assets/inventory/inv_slot.gd" id="2_dl3xh"]
+[ext_resource type="Resource" uid="uid://nghgb360w57u" path="res://assets/inventory/tutorial_book_slot.tres" id="3_k721l"]
+
+[resource]
+script = ExtResource("1_u5w86")
+slots = Array[ExtResource("2_dl3xh")]([ExtResource("3_k721l")])
+metadata/_custom_type_script = "uid://35w4kgelq25g"

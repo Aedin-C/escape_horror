@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://hxb8hjdv3yk3"]
+
+[ext_resource type="Script" uid="uid://br4g3mvhl8su4" path="res://scripts/inventory_item.gd" id="1_2aiap"]
+[ext_resource type="Texture2D" uid="uid://b3o15xquraeu5" path="res://assets/paper.png" id="2_rsxug"]
+
+[resource]
+script = ExtResource("1_2aiap")
+id = "mother"
+name = "Mother — April 30 2025"
+description = "I dreamed about Mom again. She was in the doorway but didn’t say anything. \\nWhen I woke up, the door was still open. I closed it fast. "
+texture = ExtResource("2_rsxug")
+metadata/_custom_type_script = "uid://br4g3mvhl8su4"

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://dy7lqk50fcj80"]
+
+[ext_resource type="Script" uid="uid://br4g3mvhl8su4" path="res://scripts/inventory_item.gd" id="1_d0jjl"]
+[ext_resource type="Texture2D" uid="uid://yn25fnnf2utf" path="res://assets/corner_pipe.png" id="2_nbupj"]
+
+[resource]
+script = ExtResource("1_d0jjl")
+id = "corner_pipe"
+name = "Corner Pipe"
+description = "A metallic pipe. It seems like it can connect to \\n other pipes to complete a flow of power."
+texture = ExtResource("2_nbupj")
+metadata/_custom_type_script = "uid://br4g3mvhl8su4"

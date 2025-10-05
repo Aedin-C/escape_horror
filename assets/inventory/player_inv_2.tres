@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Inv" load_steps=2 format=3 uid="uid://b66jjttiei02d"]
+
+[ext_resource type="Script" uid="uid://b72jph2r8xha3" path="res://scripts/inventory.gd" id="1_0vkqd"]
+
+[resource]
+script = ExtResource("1_0vkqd")
+slots_per_page = 12
+pages = Array[Array]([[]])
+metadata/_custom_type_script = "uid://b72jph2r8xha3"

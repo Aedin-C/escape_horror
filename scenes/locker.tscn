@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://xoofoexknhw5"]
+
+[ext_resource type="Texture2D" uid="uid://b8ccx52sbvt84" path="res://assets/locker.png" id="1_46kxn"]
+[ext_resource type="Script" uid="uid://b2dahrp8jnuck" path="res://scripts/locker.gd" id="1_byg57"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_byg57"]
+size = Vector2(24, 40)
+
+[node name="Locker" type="Area2D" groups=["Locker"]]
+z_index = 10
+script = ExtResource("1_byg57")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+texture = ExtResource("1_46kxn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 10
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_byg57")
+
+[node name="HidePosition" type="Marker2D" parent="."]
+position = Vector2(0, -10)
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="."]
+vertices = PackedVector2Array(-22, 27, 20, 27, 20, -32, -22, -32)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[connection signal="body_entered" from="." to="." method="_on_locker_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_locker_body_exited"]

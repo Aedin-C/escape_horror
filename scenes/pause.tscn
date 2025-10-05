@@ -1,0 +1,86 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqfjlqauen2p6"]
+
+[ext_resource type="Script" uid="uid://0dqg8285ewdx" path="res://scripts/pause.gd" id="1_f1d2v"]
+[ext_resource type="AudioStream" uid="uid://b0um7opltmws6" path="res://assets/Sounds/ominous-horror-soundtrack-312558.mp3" id="2_r8yp4"]
+
+[sub_resource type="Gradient" id="Gradient_f2swp"]
+offsets = PackedFloat32Array(0.863636, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_f1d2v"]
+gradient = SubResource("Gradient_f2swp")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="Pause" type="Control"]
+process_mode = 3
+z_index = 31
+custom_minimum_size = Vector2(230, 132)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = -923.0
+offset_bottom = -517.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f1d2v")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -114.5
+offset_top = -65.5
+offset_right = 114.5
+offset_bottom = 65.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -33.0
+offset_right = 35.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Resume" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="Menu" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Menu"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(115.5, 66.5)
+scale = Vector2(3.57813, 2.04688)
+texture = SubResource("GradientTexture2D_f1d2v")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_r8yp4")
+volume_db = -10.0
+autoplay = true
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Menu" to="." method="_on_menu_pressed"]

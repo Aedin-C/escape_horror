@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://6d7u2o4wofhe"]
+
+[ext_resource type="Script" uid="uid://cn1fqancff4nc" path="res://scripts/daisy_monster.gd" id="1_6x7tk"]
+[ext_resource type="Texture2D" uid="uid://c0ojshv6uo465" path="res://assets/daisy_monster.png" id="1_7w4g1"]
+[ext_resource type="PackedScene" uid="uid://jt2dj0oi5vgk" path="res://scenes/projectile.tscn" id="2_iuhv7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6x7tk"]
+atlas = ExtResource("1_7w4g1")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iuhv7"]
+atlas = ExtResource("1_7w4g1")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d3ox8"]
+animations = [{
+"frames": [{
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_6x7tk")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_iuhv7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Daisy Monster" type="Node2D"]
+z_index = 10
+script = ExtResource("1_6x7tk")
+projectile_scene = ExtResource("2_iuhv7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_d3ox8")
+autoplay = "default"
+frame_progress = 0.428841
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_monster_timer_timeout"]

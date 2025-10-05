@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://bpe3i0fkppf7x"]
+
+[ext_resource type="Script" uid="uid://br4g3mvhl8su4" path="res://scripts/inventory_item.gd" id="1_a421n"]
+[ext_resource type="Texture2D" uid="uid://b3o15xquraeu5" path="res://assets/paper.png" id="2_3ldi3"]
+
+[resource]
+script = ExtResource("1_a421n")
+id = "cell6"
+name = "Cell 6"
+description = "It burns. He shoved me in here like an animal, jabbing that stick. \\nIt hummed, hissed, the orange liquid like molten veins. I couldn’t move, \\ncouldn’t fight. He knows what it does. He knows what’s coming."
+texture = ExtResource("2_3ldi3")
+metadata/_custom_type_script = "uid://br4g3mvhl8su4"

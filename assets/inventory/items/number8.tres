@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://coid73uoy603d"]
+
+[ext_resource type="Script" uid="uid://br4g3mvhl8su4" path="res://scripts/inventory_item.gd" id="1_8u335"]
+[ext_resource type="Texture2D" uid="uid://bag6h6c1bdc13" path="res://assets/number8.jpg" id="2_70mgx"]
+
+[resource]
+script = ExtResource("1_8u335")
+id = "number_8"
+name = "Number 8"
+description = "A sheet with a bold number seven on it. What is it's purpose..."
+texture = ExtResource("2_70mgx")
+metadata/_custom_type_script = "uid://br4g3mvhl8su4"

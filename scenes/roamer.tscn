@@ -1,0 +1,91 @@
+[gd_scene load_steps=13 format=3 uid="uid://botj31dkf8t4g"]
+
+[ext_resource type="Texture2D" uid="uid://kdrano3rgphe" path="res://assets/monster_walk.png" id="1_jpno5"]
+[ext_resource type="Script" uid="uid://bdeumvv0lhm1r" path="res://scripts/roamer.gd" id="1_sdjbb"]
+[ext_resource type="PackedScene" uid="uid://wihvw7x31u4y" path="res://scenes/killzone.tscn" id="2_sdjbb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdjbb"]
+atlas = ExtResource("1_jpno5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydhfh"]
+atlas = ExtResource("1_jpno5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6nm6j"]
+atlas = ExtResource("1_jpno5")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmrxb"]
+atlas = ExtResource("1_jpno5")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_282ru"]
+atlas = ExtResource("1_jpno5")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmgth"]
+atlas = ExtResource("1_jpno5")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xthtu"]
+atlas = ExtResource("1_jpno5")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g2y2c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sdjbb")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ydhfh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6nm6j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rmrxb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_282ru")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lmgth")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xthtu")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rl126"]
+size = Vector2(15, 20)
+
+[node name="Roamer" type="Node2D"]
+z_index = 10
+script = ExtResource("1_sdjbb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_g2y2c")
+animation = &"walk"
+autoplay = "idle"
+frame_progress = 0.000483111
+
+[node name="Killzone" parent="." instance=ExtResource("2_sdjbb")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(0.5, -10)
+shape = SubResource("RectangleShape2D_rl126")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 2.0
+target_desired_distance = 2.0

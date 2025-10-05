@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InvSlot" load_steps=3 format=3 uid="uid://cdvmgpbhekpuh"]
+
+[ext_resource type="Resource" uid="uid://18ir7il2ky8b" path="res://assets/inventory/items/jail_diary.tres" id="1_tv30w"]
+[ext_resource type="Script" uid="uid://dps71dla8x225" path="res://assets/inventory/inv_slot.gd" id="2_wopbl"]
+
+[resource]
+script = ExtResource("2_wopbl")
+item = ExtResource("1_tv30w")
+metadata/_custom_type_script = "uid://dps71dla8x225"

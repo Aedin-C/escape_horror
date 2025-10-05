@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://bfm1ug4hfrmsw"]
+
+[ext_resource type="Script" uid="uid://br4g3mvhl8su4" path="res://scripts/inventory_item.gd" id="1_73gl1"]
+[ext_resource type="Texture2D" uid="uid://b3o15xquraeu5" path="res://assets/paper.png" id="2_ti3dt"]
+
+[resource]
+script = ExtResource("1_73gl1")
+id = "dance_floor"
+name = "Dance Floor"
+description = "I love to play with Anna on the dance floor. I love it when it changes colours. \\nDaddy says we should be careful because it sets off some kind of me-mech-mechaca \\nsome kinda laser thinge."
+texture = ExtResource("2_ti3dt")
+metadata/_custom_type_script = "uid://br4g3mvhl8su4"

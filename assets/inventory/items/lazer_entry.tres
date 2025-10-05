@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://h2gi12gwcowj"]
+
+[ext_resource type="Script" uid="uid://br4g3mvhl8su4" path="res://scripts/inventory_item.gd" id="1_eytvj"]
+[ext_resource type="Texture2D" uid="uid://b3o15xquraeu5" path="res://assets/paper.png" id="2_0k3we"]
+
+[resource]
+script = ExtResource("1_eytvj")
+id = "laser_entry"
+name = "Lasers"
+description = "Lock. Close. Not key, too simple. Laser. Orange laser. \\nButtons. Press buttons. Close laser. Hide buttons"
+texture = ExtResource("2_0k3we")
+metadata/_custom_type_script = "uid://br4g3mvhl8su4"

@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://by18mfqdpf4xu"]
+
+[ext_resource type="Script" uid="uid://lttwts0k3t44" path="res://scripts/narration_box.gd" id="1_cs3u2"]
+[ext_resource type="Texture2D" uid="uid://brs13visvadh0" path="res://assets/inventory/inventory.png" id="2_o2c74"]
+[ext_resource type="FontFile" uid="uid://peup0qkkjxsi" path="res://assets/Fonts/PixelOperator8.ttf" id="3_o2c74"]
+
+[node name="NarrationBox" type="CanvasLayer"]
+offset = Vector2(575, 475)
+scale = Vector2(7, 3)
+transform = Transform2D(7, 0, 0, 3, 575, 475)
+script = ExtResource("1_cs3u2")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 300.0
+offset_top = -348.0
+offset_right = -302.0
+offset_bottom = -148.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+texture = ExtResource("2_o2c74")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="Label" type="Label" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_o2c74")
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
