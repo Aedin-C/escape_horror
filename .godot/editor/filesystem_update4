@@ -1,9 +1,0 @@
-res://scenes/floors/beginning.tscn
-res://assets/inventory/player_inventory.tres
-res://scenes/crate_invUI.gd
-res://scenes/pause.gdshader
-res://scenes/pipe_slot.gdshader
-res://assets/horror_tileset.tres
-res://assets/front_tileset.tres
-res://assets/greenhouse.tres
-res://scripts/floors/beginning.gd

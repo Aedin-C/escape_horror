@@ -1,4 +1,0 @@
-CrateInv
-InvSlot
-InvItem
-Inv
