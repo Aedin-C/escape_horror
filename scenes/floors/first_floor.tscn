@@ -241,15 +241,15 @@ color = Color(0, 0, 0, 1)
 
 [node name="Blinky" parent="Monsters" instance=ExtResource("7_kon7b")]
 position = Vector2(200, -502)
-spawn_chance = 0.5
+spawn_chance = 0.05
 
 [node name="Blinky2" parent="Monsters" instance=ExtResource("7_kon7b")]
 position = Vector2(216, -502)
-spawn_chance = 0.5
+spawn_chance = 0.05
 
 [node name="Blinky3" parent="Monsters" instance=ExtResource("7_kon7b")]
 position = Vector2(232, -502)
-spawn_chance = 0.5
+spawn_chance = 0.05
 
 [node name="Roamer" parent="Monsters" instance=ExtResource("8_t0io5")]
 position = Vector2(-119, -558)
