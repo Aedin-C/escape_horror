@@ -3,16 +3,23 @@ extends Area2D
 ##
 ## When entered, if the player has the Secret Key, they can right click to access the crate.
 
-@onready var player = $"../Player" ## Get the player node to call on functions
+@onready var highlight = $Highlight ## Access to the highlight node
+@onready var player = $"../../Player" ## Get the player node to call on functions
 var se_key = "Secret Key" ## Name of the key we want to check for
 
 var entered = false ## Body entered by player
 
+## Set the highlight visibility to false
+func _ready() -> void:
+	highlight.visible = false
+
 func _on_secret_chest_area_body_entered(body: CharacterBody2D) -> void:
 	entered = true
+	highlight.visible = true
 
 func _on_secret_chest_area_body_exited(body: CharacterBody2D) -> void:
 	entered = false
+	highlight.visible = false
 
 func _physics_process(delta: float) -> void:
 	if entered and Input.is_action_just_pressed("right_click"):
