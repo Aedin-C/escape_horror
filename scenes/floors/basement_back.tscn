@@ -105,7 +105,6 @@ offset_bottom = -37.0
 scale = Vector2(0.25, 0.25)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]

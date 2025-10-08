@@ -81,19 +81,22 @@ var item_pages := {
 		"■ ■ ■ ■ ■ ■ ■ ■ □ ■ \n■ ■ ■ ■ ■ ■ ■ ■ □ ■ \n■ ■ ■ ■ ■ ■ ■ ■ □ ■ \n■ ■ ■ ■ ■ ■ ■ ■ □ ■ \n■ ■ ■ ■ ■ ■ ■ ■ □ ■ \n■ ■ ■ ■ ■ ■ ■ ■ □ ■ \n■ ■ ■ ■ ■ ■ ■ ■ □ ■ \n■ ■ ■ ■ ■ □  □  □  □ ■ \n■ ■ ■ ■ ■ □ ■ ■ ■ ■ \n■ ■ ■ ■ ■ □ ■ ■ ■ ■ \n■ ■ ■ ■ ■ □ ■ ■ ■ ■ \n■ ■ ■ ■ ■ □ ■ ■ ■ ■ \n□  □  □  □  □  □ ■ ■ ■ ■ \n□ ■ ■ ■ ■ ■ ■ ■ ■ ■ \n□ ■ □  □  □  □  □  □  □ ■ \n□ ■ □ ■ ■ ■ ■ ■ □ ■ \n□ ■ □ ■ \n□ ■ □ ■ \n□  □  □ ■",
 	],
 	"Pipe Blueprints": [
-		"in: (0,2) \nout: (3,6), (5,1), (7,4)",
+		"in: (1,3) \nout: (3,6), (5,1), (7,4)",
+		"connect to edges",
 	],
 	"Full Power Blueprints": [
 		"Power + (1,1), (1,6), (6,1), (7,1), (7,6) + all lit",
+		"connect to edges",
 	],
 	"Tutorial Book": [
 		"This is how you use a desk to read longer items.",
 		"Shorter items will be fully readable inside the inventory.",
-		"Items can primarily be collected inside of the drawers you see on the left, but can also be inside other containers or in things that seem out of place.",
-		"Be sure to right click on anything suspicious to ensure that it's not holding an item.",
+		"Items can be found in various containers, however, they will light up when you walk within range of them.",
+		"Be sure to click on anything that lights up when you walk up to it.",
 		"Walking up to doors or stair cases can send the player to the next floor/room if all conditions are met.",
-		"Some floors will have lockers to hide from the monsters. Walk up to them and right click to hide inside.",
-		"When you're ready, proceed to the door and right click to return to the menu.",
+		"Some floors will have lockers to hide from the monsters. Walk up to them and click to hide inside.",
+		"However, lockers are not the only way to avoid the monsters. You can also stand on chairs or hide in far away corners where the monster cannot reach you.",
+		"Feel free to teast the locker in the top left corner. When you're ready, proceed to the door and click to return to the menu.",
 	],
 }
 

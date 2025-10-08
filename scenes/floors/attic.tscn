@@ -100,8 +100,8 @@ shape = SubResource("RectangleShape2D_q6fh2")
 color = Color(0, 0, 0, 1)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(-72.5, -48)
-scale = Vector2(2.26563, 0.5)
+position = Vector2(-88.5001, -48)
+scale = Vector2(1.76563, 0.5)
 texture = SubResource("GradientTexture2D_w838v")
 
 [node name="Crates" type="Node" parent="."]

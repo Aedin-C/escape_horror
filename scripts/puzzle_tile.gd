@@ -16,12 +16,13 @@ var player_on_tile = false ## Boolean determining if the player is on that tile
 
 ## Ensure overlays are transparent by default.
 func _ready():
+	JournalManager.update_task("Dance Floor", "The dance floor needs power again.")
 	overlay.color = overlay_color_default
 
 ## Toggle the tile if the player is on that tile and has right clicked.
 ## Check the solution after some allotted time based on the machine.
 func _process(delta):
-	if player_on_tile and Input.is_action_just_pressed("right_click"):
+	if player_on_tile and (Input.is_action_just_pressed("right_click") or Input.is_action_just_pressed("left_click")):
 		toggle_tile()
 	await get_tree().create_timer(0.001*delta).timeout
 	get_parent().check_solution()
@@ -34,6 +35,7 @@ func toggle_tile():
 
 func _on_tile_body_entered(body: CharacterBody2D):
 	player_on_tile = true
+	JournalManager.add_task("Dance Floor", "There seems to be some odd wiring from the dance floor. Maybe you need to complete a puzzle.")
 
 func _on_tile_body_exited(body: CharacterBody2D):
 	player_on_tile = false

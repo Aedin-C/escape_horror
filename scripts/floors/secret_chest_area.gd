@@ -22,8 +22,9 @@ func _on_secret_chest_area_body_exited(body: CharacterBody2D) -> void:
 	highlight.visible = false
 
 func _physics_process(delta: float) -> void:
-	if entered and Input.is_action_just_pressed("right_click"):
+	if entered and (Input.is_action_just_pressed("right_click") or Input.is_action_just_pressed("left_click")):
 		player.show_message("It's a metallic chest. \n It looks like there's a \nspecial keyhole in it...")
+		JournalManager.add_task("Chest", "There's a metallic chest on the main floor. Seems like it needs a key.")
 		if check_key():
 			$"../../Crates/Crate5".visible = true
 
@@ -34,6 +35,6 @@ func check_key() -> bool:
 	var items = player.get_inv()
 	for item in items:
 		if item == se_key:
-			player.show_message("You used the secret key!")
+			JournalManager.update_task("Chest", "Secret Key was used!")
 			return true
 	return false

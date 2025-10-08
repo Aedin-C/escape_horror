@@ -21,7 +21,7 @@ func _on_to_end_body_exited(body: CharacterBody2D) -> void:
 	entered = false
 
 func _physics_process(delta: float) -> void:
-	if entered and Input.is_action_just_pressed("right_click"):
+	if entered and (Input.is_action_just_pressed("right_click") or Input.is_action_just_pressed("left_click")):
 		if checkComplete():
 			GameManager.leave_scene()
 			SaveManager.promote_temp_to_permanent()
@@ -29,6 +29,7 @@ func _physics_process(delta: float) -> void:
 			get_tree().change_scene_to_file("res://scenes/floors/tunnel.tscn")
 		else: 
 			player.show_message("You examine the mysterious bookshelf. \n It appears to have three \nkeyholes and requires power.")
+			JournalManager.add_task("Bookcase", "A mysterious opening. You feel a draft of air through the bookshelf. It seems to require 3 keys to open.")
 
 ## Checks the player's inventory for the required key to open the door.
 ## Loops through the inventory until it finds the items named 
@@ -50,5 +51,6 @@ func checkComplete():
 			has_gkey = true
 	
 	if has_akey and has_bkey and has_gkey and PipeCompletion.pipe_complete:
+		JournalManager.update_task("Bookcase", "You used all 3 keys!")
 		return true	
 	return false

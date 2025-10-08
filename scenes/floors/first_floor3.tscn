@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://cr8wsh80fri7r"]
+[gd_scene load_steps=40 format=4 uid="uid://cr8wsh80fri7r"]
 
 [ext_resource type="Script" uid="uid://cp28av864bn0h" path="res://scenes/floors/first_floor_3.gd" id="1_0cxbu"]
 [ext_resource type="TileSet" uid="uid://b6ig120vvswgh" path="res://assets/first_floor_tileset.tres" id="1_e42g3"]
@@ -14,11 +14,13 @@
 [ext_resource type="PackedScene" uid="uid://botj31dkf8t4g" path="res://scenes/roamer.tscn" id="7_4dxyc"]
 [ext_resource type="PackedScene" uid="uid://bw4qdnf38dwq7" path="res://scenes/blinky.tscn" id="7_6vqg1"]
 [ext_resource type="Script" uid="uid://7lsgeb8xcd4r" path="res://scripts/floors/to_end.gd" id="8_72gu2"]
+[ext_resource type="TileSet" uid="uid://b02kq7jpl50oo" path="res://assets/added_decore_tileset.tres" id="9_wfhab"]
 [ext_resource type="PackedScene" uid="uid://o4sf24im15s4" path="res://scenes/crate.tscn" id="11_hkyh2"]
 [ext_resource type="Resource" uid="uid://bc6rbh351btom" path="res://assets/inventory/wife_entry_one_crate_inv.tres" id="12_bwrsy"]
 [ext_resource type="Resource" uid="uid://csmqe044o7uqd" path="res://assets/inventory/wife_entry_two_crate_inv.tres" id="14_a30ji"]
 [ext_resource type="Resource" uid="uid://d3gn1s683dau4" path="res://assets/inventory/lazer_entry_crate_inv.tres" id="16_0cxbu"]
 [ext_resource type="PackedScene" uid="uid://bskehw3oclh2l" path="res://scenes/desk.tscn" id="16_a30ji"]
+[ext_resource type="Resource" uid="uid://tdjjnry2klmt" path="res://assets/inventory/keep_it_moving_crate_inv.tres" id="17_mpibp"]
 [ext_resource type="Resource" uid="uid://n4lu606q2tob" path="res://assets/inventory/code_crate_inv.tres" id="25_d2vny"]
 [ext_resource type="TileSet" uid="uid://cbklfjum1et0t" path="res://assets/second_floor_tileset.tres" id="26_qvsv4"]
 [ext_resource type="Script" uid="uid://bfx1mq6tfhf3j" path="res://scripts/floors/secret_chest_area.gd" id="27_d2vny"]
@@ -38,8 +40,8 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0, 0)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ul3eb"]
-size = Vector2(21, 32)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0cxbu"]
+size = Vector2(26, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7pru3"]
 size = Vector2(16, 24)
@@ -189,12 +191,18 @@ tile_set = ExtResource("1_e42g3")
 tile_map_data = PackedByteArray("AAD3//f/AAAJAAIAAAAJAOT/AAAJAAIAAAD//+z/AAAJAAIAAAA=")
 tile_set = ExtResource("6_a30ji")
 
+[node name="Food" type="TileMapLayer" parent="."]
+position = Vector2(174, -150)
+scale = Vector2(0.25, 0.25)
+tile_map_data = PackedByteArray("AAAOAPP/AAAAAA8AAAA=")
+tile_set = ExtResource("9_wfhab")
+
 [node name="Basement" type="Area2D" parent="."]
 script = ExtResource("4_wscpc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Basement"]
-position = Vector2(-85.5, -96)
-shape = SubResource("RectangleShape2D_ul3eb")
+position = Vector2(-83, -96)
+shape = SubResource("RectangleShape2D_0cxbu")
 
 [node name="Out Front" type="Area2D" parent="."]
 script = ExtResource("5_72gu2")
@@ -258,13 +266,18 @@ crate_id = "1"
 
 [node name="Crate2" parent="Crates" instance=ExtResource("11_hkyh2")]
 position = Vector2(272, -438)
-inv = ExtResource("16_0cxbu")
+inv = ExtResource("17_mpibp")
 crate_id = "2"
 
 [node name="Crate3" parent="Crates" instance=ExtResource("11_hkyh2")]
 position = Vector2(-64, -336)
 inv = ExtResource("14_a30ji")
 crate_id = "3"
+
+[node name="Crate4" parent="Crates" instance=ExtResource("11_hkyh2")]
+position = Vector2(224, -192)
+inv = ExtResource("16_0cxbu")
+crate_id = "4"
 
 [node name="Crate5" parent="Crates" instance=ExtResource("11_hkyh2")]
 visible = false

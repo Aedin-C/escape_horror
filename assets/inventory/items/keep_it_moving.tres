@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("1_27g6r")
-id = "keep_it_moving"
-name = "Keep it moving"
-description = "Top left, top middle, middle left, bottom right"
+id = "the_sink"
+name = "The Sink"
+description = "I hear them. They're crawling around in there. \\nIt's like whispers. They want something."
 texture = ExtResource("2_5peaq")
 metadata/_custom_type_script = "uid://br4g3mvhl8su4"

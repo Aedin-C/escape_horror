@@ -29,15 +29,15 @@ func _ready():
 func on_blinky_body_entered(body: CharacterBody2D) -> void:
 	if !hasScreamed:
 		scream.play()
-		roamer.detection_range = 1000
-		roamer.player_path_threshold = 1000
+		roamer.detection_range += 1000
+		roamer.player_path_threshold += 1000
 		timer.start()
 		hasScreamed = true
 
 ## Set the values of the roamer back to default.
 func _on_timer_timeout() -> void:
-	roamer.detection_range = 210
-	roamer.player_path_threshold = 30
+	roamer.detection_range -= 1000
+	roamer.player_path_threshold -= 1000
 	screamTimer.start()
 
 ## Allow the monster to scream again

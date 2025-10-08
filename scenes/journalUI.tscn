@@ -1,0 +1,71 @@
+[gd_scene load_steps=7 format=3 uid="uid://dvc4kehor5665"]
+
+[ext_resource type="Script" uid="uid://bg63yuuwv4api" path="res://scripts/journal_ui.gd" id="1_l6xkk"]
+[ext_resource type="Texture2D" uid="uid://dy27xv0nry1u5" path="res://assets/inventory/inventory_slot.png" id="2_v8lhe"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_v8lhe"]
+light_mode = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_osqeu"]
+content_margin_left = 12.0
+content_margin_top = 10.0
+content_margin_right = 12.0
+content_margin_bottom = 10.0
+texture = ExtResource("2_v8lhe")
+
+[sub_resource type="Gradient" id="Gradient_kgbvl"]
+offsets = PackedFloat32Array(0.954839, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rc6ek"]
+gradient = SubResource("Gradient_kgbvl")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="JournalUI" type="Control"]
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l6xkk")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+material = SubResource("CanvasItemMaterial_v8lhe")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -160.0
+offset_right = 200.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(100, 100)
+theme_override_styles/panel = SubResource("StyleBoxTexture_osqeu")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="TaskButtons" type="VBoxContainer" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="TaskDisplay" type="VBoxContainer" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TasksText" type="RichTextLabel" parent="PanelContainer/HBoxContainer/TaskDisplay"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 0
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(576, 325)
+scale = Vector2(6.25, 5)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_rc6ek")

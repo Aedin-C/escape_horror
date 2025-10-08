@@ -19,5 +19,6 @@ func check_solution():
 ## Inform the player to check the lasers and remove the lasers.
 func puzzle_solved():
 	player.show_message("Something in the air shifted. \nYou should check on the lasers.")
+	JournalManager.update_task("Dance Floor", "Something in the air shifted. You should check on the laser.")
 	if lasers:
 		lasers.queue_free()

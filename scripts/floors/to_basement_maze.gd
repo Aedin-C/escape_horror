@@ -20,5 +20,6 @@ func _physics_process(delta: float) -> void:
 	if entered:
 		if not PipeCompletion.pipe_complete:
 			player.show_message("A metallic door. It needs power to open.")
-		elif Input.is_action_just_pressed("right_click"):
+			JournalManager.add_task("Back Basement Door", "There's a metallic door in the basement. Seems like it needs a power.")
+		elif (Input.is_action_just_pressed("right_click") or Input.is_action_just_pressed("left_click")):
 			get_tree().change_scene_to_file("res://scenes/floors/basement_maze2.tscn")

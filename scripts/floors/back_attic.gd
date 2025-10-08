@@ -19,14 +19,15 @@ func _on_back_attic_body_entered(body: CharacterBody2D) -> void:
 func _on_back_attic_body_exited(body: CharacterBody2D) -> void:
 	entered = false
 
-func _physics_process(delta: float):	
-	if entered and Input.is_action_just_pressed("right_click"):
+func _physics_process(delta: float):
+	if entered and (Input.is_action_just_pressed("right_click") or Input.is_action_just_pressed("left_click")):
 		player.show_message("It's a metallic door. \n It looks like there's a keyhole in it...")
+		JournalManager.add_task("Attic Door", "There's a metallic door in the attic. Seems like it needs a key.")
 		if check_key():
 			GameManager.leave_scene()
 			SaveManager.promote_temp_to_permanent()
 			get_tree().change_scene_to_file("res://scenes/floors/attic_back.tscn")
-			
+
 
 ## Checks the player's inventory for the required key to open the door.
 ## Loops through the inventory until it finds an item named "Attic Key."
@@ -35,6 +36,6 @@ func check_key() -> bool:
 	var items = player.get_inv()
 	for item in items:
 		if item == a_key:
-			player.show_message("You used the attic key!")
+			JournalManager.update_task("Attic Door", "Attic Key was used!")
 			return true
 	return false
