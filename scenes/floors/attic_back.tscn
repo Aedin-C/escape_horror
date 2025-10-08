@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://d0xelotn0gkyh"]
+[gd_scene load_steps=18 format=4 uid="uid://d0xelotn0gkyh"]
 
 [ext_resource type="TileSet" uid="uid://dp5betmsdvek1" path="res://assets/attic_tileset2.tres" id="1_8cl3a"]
 [ext_resource type="Script" uid="uid://gs37yimc3uvw" path="res://scenes/floors/attic_back.gd" id="1_ma7mi"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://cv86fgug2iugi" path="res://assets/dead_body1.png" id="5_0xkgr"]
 [ext_resource type="PackedScene" uid="uid://bskehw3oclh2l" path="res://scenes/desk.tscn" id="6_2etpe"]
 [ext_resource type="PackedScene" uid="uid://o4sf24im15s4" path="res://scenes/crate.tscn" id="8_kjxqa"]
-[ext_resource type="Resource" uid="uid://be52nyn7sbhb6" path="res://assets/inventory/items/owner_journal.tres" id="9_nilbq"]
 [ext_resource type="Resource" uid="uid://mrie1hb1j5ho" path="res://assets/inventory/owner_journal_crate_inv.tres" id="9_y5prn"]
 [ext_resource type="AudioStream" uid="uid://sfd7jp7bi1dp" path="res://assets/Sounds/eerie-dark-ambience-for-suspenseful-scenes-303396.mp3" id="12_1iywn"]
 
@@ -27,6 +26,13 @@ size = Vector2(24, 23)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d4770"]
 size = Vector2(40, 40)
+
+[sub_resource type="Gradient" id="Gradient_20ckp"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ma7mi"]
+gradient = SubResource("Gradient_20ckp")
+fill_from = Vector2(0.5, 0)
+fill_to = Vector2(0.5, 1)
 
 [node name="AtticBack" type="Node2D"]
 script = ExtResource("1_ma7mi")
@@ -105,13 +111,17 @@ shape = SubResource("RectangleShape2D_d4770")
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.122252, 0.122252, 0.122252, 1)
 
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(72, -11.5)
+scale = Vector2(0.375, 0.359375)
+texture = SubResource("GradientTexture2D_ma7mi")
+
 [node name="Desk" parent="." instance=ExtResource("6_2etpe")]
 position = Vector2(103, -103)
 
 [node name="Crate" parent="." instance=ExtResource("8_kjxqa")]
 position = Vector2(131, -76)
 inv = ExtResource("9_y5prn")
-item = ExtResource("9_nilbq")
 crate_id = "40"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://cctpil6nrnl42"]
+[gd_scene load_steps=35 format=4 uid="uid://cctpil6nrnl42"]
 
 [ext_resource type="PackedScene" uid="uid://o4sf24im15s4" path="res://scenes/crate.tscn" id="1_0pphd"]
 [ext_resource type="Script" uid="uid://dcm85ycbjsbdc" path="res://scenes/floors/basement.gd" id="1_1xd24"]
@@ -154,6 +154,11 @@ size = Vector2(32, 52.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ggs2o"]
 size = Vector2(35, 37)
+
+[sub_resource type="Gradient" id="Gradient_qa4e6"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ggs2o"]
+gradient = SubResource("Gradient_qa4e6")
 
 [node name="Basement" type="Node2D"]
 script = ExtResource("1_1xd24")
@@ -332,6 +337,11 @@ shape = SubResource("RectangleShape2D_ggs2o")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0, 0, 0, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-104, -96)
+scale = Vector2(1.25, 0.5)
+texture = SubResource("GradientTexture2D_ggs2o")
 
 [node name="Roamer" type="Node" parent="."]
 

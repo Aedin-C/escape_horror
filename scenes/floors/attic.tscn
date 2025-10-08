@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://2svpp0xxgs3y"]
+[gd_scene load_steps=20 format=4 uid="uid://2svpp0xxgs3y"]
 
 [ext_resource type="Script" uid="uid://bieh483xbeq6y" path="res://scenes/floors/attic.gd" id="1_3dv2a"]
 [ext_resource type="TileSet" uid="uid://to4ow2qfa3of" path="res://assets/attic.tres" id="1_bfs4s"]
@@ -28,6 +28,11 @@ size = Vector2(22, 41)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6fh2"]
 size = Vector2(96, 32)
+
+[sub_resource type="Gradient" id="Gradient_msgvq"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_w838v"]
+gradient = SubResource("Gradient_msgvq")
 
 [node name="attic" type="Node2D"]
 script = ExtResource("1_3dv2a")
@@ -93,6 +98,11 @@ shape = SubResource("RectangleShape2D_q6fh2")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0, 0, 0, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-72.5, -48)
+scale = Vector2(2.26563, 0.5)
+texture = SubResource("GradientTexture2D_w838v")
 
 [node name="Crates" type="Node" parent="."]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://djis5p5pkkdrx"]
+[gd_scene load_steps=26 format=4 uid="uid://djis5p5pkkdrx"]
 
 [ext_resource type="Texture2D" uid="uid://de45v4plvkwod" path="res://assets/greenhouse.png" id="1_dtf2r"]
 [ext_resource type="Script" uid="uid://dryejpvrydxpp" path="res://scenes/floors/greenhouse_2.gd" id="1_l5dns"]
@@ -221,6 +221,13 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0, 0)
 
+[sub_resource type="Gradient" id="Gradient_20ckp"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_a6ebd"]
+gradient = SubResource("Gradient_20ckp")
+fill_from = Vector2(0.5, 0)
+fill_to = Vector2(0.5, 1)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eybep"]
 size = Vector2(38, 32)
 
@@ -279,6 +286,11 @@ texture = SubResource("GradientTexture2D_qno3t")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.0962047, 0.0962048, 0.0962047, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(8, -12)
+scale = Vector2(0.375, 0.359375)
+texture = SubResource("GradientTexture2D_a6ebd")
 
 [node name="To BasementBack" type="Area2D" parent="."]
 position = Vector2(93, -208)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqtc5ke8ehber"]
+[gd_scene load_steps=6 format=3 uid="uid://bqtc5ke8ehber"]
 
 [ext_resource type="Script" uid="uid://beqjuynnjvie4" path="res://scripts/menu.gd" id="1_yqeox"]
 [ext_resource type="AudioStream" uid="uid://b0um7opltmws6" path="res://assets/Sounds/ominous-horror-soundtrack-312558.mp3" id="2_vjb58"]
+[ext_resource type="FontFile" uid="uid://peup0qkkjxsi" path="res://assets/Fonts/PixelOperator8.ttf" id="3_con2f"]
 
 [sub_resource type="Gradient" id="Gradient_f2swp"]
 offsets = PackedFloat32Array(0.863636, 1)
@@ -89,6 +90,19 @@ zoom = Vector2(6, 6)
 stream = ExtResource("2_vjb58")
 volume_db = -10.0
 autoplay = true
+
+[node name="Version" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 117.0
+offset_right = 292.0
+offset_bottom = 130.0
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/normal_font = ExtResource("3_con2f")
+theme_override_font_sizes/normal_font_size = 8
+fit_content = true
+scroll_active = false
+horizontal_alignment = 2
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Tutorial" to="." method="_on_tutorial_pressed"]

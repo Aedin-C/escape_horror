@@ -14,17 +14,11 @@
 [ext_resource type="PackedScene" uid="uid://bw4qdnf38dwq7" path="res://scenes/blinky.tscn" id="7_h1ke7"]
 [ext_resource type="PackedScene" uid="uid://botj31dkf8t4g" path="res://scenes/roamer.tscn" id="7_mxejy"]
 [ext_resource type="Script" uid="uid://7lsgeb8xcd4r" path="res://scripts/floors/to_end.gd" id="8_jrwwg"]
-[ext_resource type="TileSet" uid="uid://b02kq7jpl50oo" path="res://assets/added_decore_tileset.tres" id="9_mtwn1"]
 [ext_resource type="PackedScene" uid="uid://o4sf24im15s4" path="res://scenes/crate.tscn" id="11_3dmux"]
 [ext_resource type="Resource" uid="uid://bc6rbh351btom" path="res://assets/inventory/wife_entry_one_crate_inv.tres" id="12_lemn6"]
 [ext_resource type="Resource" uid="uid://csmqe044o7uqd" path="res://assets/inventory/wife_entry_two_crate_inv.tres" id="14_t0l3m"]
-[ext_resource type="Resource" uid="uid://wuh3f3yxqquv" path="res://assets/inventory/items/wife_entry_one.tres" id="15_g1y5p"]
 [ext_resource type="Resource" uid="uid://d3gn1s683dau4" path="res://assets/inventory/lazer_entry_crate_inv.tres" id="16_oauxb"]
 [ext_resource type="PackedScene" uid="uid://bskehw3oclh2l" path="res://scenes/desk.tscn" id="16_t0l3m"]
-[ext_resource type="Resource" uid="uid://h2gi12gwcowj" path="res://assets/inventory/items/lazer_entry.tres" id="17_xo5tn"]
-[ext_resource type="Resource" uid="uid://cxkv1mdwvbcnp" path="res://assets/inventory/items/wife_entry_two.tres" id="19_mtwn1"]
-[ext_resource type="Resource" uid="uid://tdjjnry2klmt" path="res://assets/inventory/keep_it_moving_crate_inv.tres" id="20_54d3d"]
-[ext_resource type="Resource" uid="uid://wttpg3pnx0ax" path="res://assets/inventory/items/keep_it_moving.tres" id="21_lq8g2"]
 [ext_resource type="Resource" uid="uid://n4lu606q2tob" path="res://assets/inventory/code_crate_inv.tres" id="25_54d3d"]
 [ext_resource type="TileSet" uid="uid://cbklfjum1et0t" path="res://assets/second_floor_tileset.tres" id="27_4x2fq"]
 [ext_resource type="Script" uid="uid://bfx1mq6tfhf3j" path="res://scripts/floors/secret_chest_area.gd" id="28_7dor1"]
@@ -58,6 +52,30 @@ size = Vector2(24, 38)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f65xg"]
 size = Vector2(21, 27)
+
+[sub_resource type="Gradient" id="Gradient_xo5tn"]
+colors = PackedColorArray(0.513726, 1, 1, 0.505882, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mtwn1"]
+gradient = SubResource("Gradient_xo5tn")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_oauxb"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xo5tn"]
+gradient = SubResource("Gradient_oauxb")
+fill_from = Vector2(0, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_mtwn1"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_54d3d"]
+gradient = SubResource("Gradient_mtwn1")
+fill_from = Vector2(0.5, 0)
+fill_to = Vector2(0.5, 1)
 
 [node name="First Floor2" type="Node2D"]
 script = ExtResource("1_oauxb")
@@ -171,12 +189,6 @@ tile_set = ExtResource("1_ujegf")
 tile_map_data = PackedByteArray("AAD3//f/AAAJAAIAAAAJAOT/AAAJAAIAAAD//+z/AAAJAAIAAAA=")
 tile_set = ExtResource("6_t0l3m")
 
-[node name="Food" type="TileMapLayer" parent="."]
-position = Vector2(182, -134)
-scale = Vector2(0.25, 0.25)
-tile_map_data = PackedByteArray("AAAMAPf/AAAAAA8AAAA=")
-tile_set = ExtResource("9_mtwn1")
-
 [node name="Basement" type="Area2D" parent="."]
 script = ExtResource("4_jqlhd")
 
@@ -233,30 +245,21 @@ position = Vector2(-108, -554)
 [node name="Crate" parent="Crates" instance=ExtResource("11_3dmux")]
 position = Vector2(-96, -336)
 inv = ExtResource("12_lemn6")
-item = ExtResource("15_g1y5p")
 crate_id = "1"
 
 [node name="Crate2" parent="Crates" instance=ExtResource("11_3dmux")]
 position = Vector2(272, -438)
 inv = ExtResource("16_oauxb")
-item = ExtResource("17_xo5tn")
 crate_id = "2"
 
 [node name="Crate3" parent="Crates" instance=ExtResource("11_3dmux")]
 position = Vector2(-64, -336)
 inv = ExtResource("14_t0l3m")
-item = ExtResource("19_mtwn1")
 crate_id = "3"
-
-[node name="Crate4" parent="Crates" instance=ExtResource("11_3dmux")]
-position = Vector2(224, -160)
-inv = ExtResource("20_54d3d")
-item = ExtResource("21_lq8g2")
-crate_id = "4"
 
 [node name="Crate5" parent="Crates" instance=ExtResource("11_3dmux")]
 visible = false
-position = Vector2(272, -32)
+position = Vector2(272, -34)
 inv = ExtResource("25_54d3d")
 crate_id = "5"
 
@@ -282,11 +285,26 @@ script = ExtResource("28_7dor1")
 position = Vector2(-0.5, -3.5)
 shape = SubResource("RectangleShape2D_f65xg")
 
+[node name="Highlight" type="PointLight2D" parent="Secret Chest/Secret Chest Area"]
+position = Vector2(2, -2)
+scale = Vector2(0.25, 0.25)
+texture = SubResource("GradientTexture2D_mtwn1")
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("29_7dor1")
 volume_db = -12.0
 autoplay = true
 parameters/looping = true
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-80, -96)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("GradientTexture2D_xo5tn")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(-128, -72)
+scale = Vector2(0.5, 1.25)
+texture = SubResource("GradientTexture2D_54d3d")
 
 [connection signal="player_entered" from="NavigationRegion2D/Lockers/Locker1" to="Player" method="_on_locker_player_entered"]
 [connection signal="player_exited" from="NavigationRegion2D/Lockers/Locker1" to="Player" method="_on_locker_player_exited"]
